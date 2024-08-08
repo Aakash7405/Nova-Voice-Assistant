@@ -18,7 +18,7 @@ import messagebox
 from PIL import Image, ImageTk
 import pyautogui
 
-openai.api_key = "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"
+openai.api_key = "your_openAi_apiKey"
 
 # chat module
 
@@ -94,7 +94,7 @@ def Take_text():
 
 def connectDatabase(command):
     try:
-        con = pymysql.connect(host="localhost", user="root", passwd="@akash#123", port=3306)
+        con = pymysql.connect(host="localhost", user="root", passwd="your_pass", port=3306)
         mycursor = con.cursor()
 
     except:
@@ -157,7 +157,7 @@ def Take_query():
             time.sleep(5)
 
         if 'news' in query:
-            webbrowser.open_new_tab("https://timesofindia.indiatimes.com/city/ghaziabad")
+            webbrowser.open_new_tab("https://timesofindia.indiatimes.com/city/delhi")
             speak('Here are some headlines from the Times of India, Happy reading')
             time.sleep(6)
 
@@ -214,7 +214,7 @@ def Take_query():
 
         elif "calculate" in query:
 
-            app_id = "XXU6UW-575WTHRJAK"
+            app_id = "your_wolframalpha_apikey"
             client = wolframalpha.Client(app_id)
             index = query.lower().split().index('calculate')
             query = query.split()[index + 1:]
@@ -275,8 +275,8 @@ def Take_query():
 
 
         elif "who made you" in query or "who created you" in query:
-            print("I have been created by Team 1")
-            speak("I have been created by Team 1.")
+            print("I have been created by Aakash")
+            speak("I have been created by Aakash")
 
 
         elif "exit" in query or "bye" in query:
