@@ -117,7 +117,7 @@ def connect_database():
 
     else:
         try:
-            con = pymysql.connect(host="localhost", user="root", passwd="@akash#123", port=3306)
+            con = pymysql.connect(host="localhost", user="root", passwd="your_pass", port=3306)
             mycursor = con.cursor()
 
         except:
@@ -125,14 +125,14 @@ def connect_database():
             return
 
         try:
-            query = 'create database EchoUserdata'
+            query = 'create database NovaData'
             mycursor.execute(query)
             query = 'use EchoUserdata'
             mycursor.execute(query)
             query = 'create table data(id int auto_increment primary key not null, email varchar(50), username varchar(100),password varchar(20))'
             mycursor.execute(query)
         except:
-            mycursor.execute('use EchoUserdata')
+            mycursor.execute('use NovaUserData')
 
         query = 'select * from data where username=%s'
         mycursor.execute(query, (usernameEntry.get()))
