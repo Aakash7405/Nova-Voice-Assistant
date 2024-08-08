@@ -12,14 +12,14 @@ def login():
     else:
 
         try:
-            connection = pymysql.connect(host='localhost', user='root', passwd='@akash#123', port=3306)
+            connection = pymysql.connect(host='localhost', user='root', passwd='your_pass', port=3306)
             mycursor = connection.cursor()
 
         except:
             messagebox.showerror('Error', "Database connectivity issue , Please try again")
             return
 
-        query = 'use EchoUserdata'
+        query = 'use Novadata'
         mycursor.execute(query)
         query = 'select * from data where username=%s and password=%s'
         mycursor.execute(query, (usernameEntry.get(), passEntry.get()))
